@@ -25,12 +25,24 @@ const Author = styled.p`
   color: #666;
 `;
 
-function Card({ title, description, author }) {
+const CreatedAt = styled.p`
+  font-size: 14px;
+  color: #666;
+`;
+
+const Id = styled.p`
+  font-size: 14px;
+  color: #666;
+`;
+
+function Card({ title, description, author, createdAt, id }) {
   return (
     <CardContainer>
       <Title>{title}</Title>
       <Description>{description}</Description>
       <Author>Author: {author}</Author>
+      <CreatedAt>Created At: {createdAt}</CreatedAt>
+      <Id>ID: {id}</Id>
     </CardContainer>
   );
 }
@@ -39,6 +51,8 @@ Card.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
+  createdAt: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default Card;

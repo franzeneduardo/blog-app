@@ -1,17 +1,16 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const StyledForm = styled.form`
-  /* Estilos personalizados para o formulário */
-`;
+import FormCadastro from '../../components/FormCadastro';
 
 function Cadastro() {
+  const handleFormSubmit = () => {
+    // Lógica para lidar com o envio do formulário
+    console.log('Formulário enviado!');
+  };
+
   return (
     <div>
-      <h1>Formulário de Cadastro</h1>
-      <StyledForm>
-        {/* Seu código para exibir o formulário de cadastro */}
-      </StyledForm>
+      <h1>Cadastro</h1>
+      <FormCadastro onSubmit={handleFormSubmit} />
     </div>
   );
 }

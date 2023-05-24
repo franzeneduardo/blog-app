@@ -8,18 +8,25 @@ export const fetchCourses = async () => {
     const response = await axios.get(`${API_BASE_URL}/courses`);
     return response.data;
   } catch (error) {
-    console.error('Error fetching items:', error);
+    console.error('Error fetching courses:', error);
     throw error;
   }
 };
 
 // Função para realizar uma requisição POST
-export const createCourse = async (itemData) => {
+export const createCourse = async (courseData) => {
   try {
-    const response = await axios.post(`${API_BASE_URL}/courses`, itemData);
+    const { title, description, instructor, createdAt, id } = courseData;
+    const response = await axios.post(`${API_BASE_URL}/courses`, {
+      title,
+      description,
+      instructor,
+      createdAt,
+      id
+    });
     return response.data;
   } catch (error) {
-    console.error('Error creating item:', error);
+    console.error('Error creating course:', error);
     throw error;
   }
 };
